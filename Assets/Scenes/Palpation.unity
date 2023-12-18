@@ -3823,7 +3823,6 @@ MonoBehaviour:
   handRight: {fileID: 1171365416}
   controlledHandsList: []
   log: {fileID: 558864549}
-  send_Log: {fileID: 0}
 --- !u!114 &1117077281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4254,6 +4253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handType: 1
+  handRoot: {fileID: 587420224}
 --- !u!54 &1171365420
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6163,6 +6163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handType: 0
+  handRoot: {fileID: 1383628433}
 --- !u!54 &1913437772
 Rigidbody:
   m_ObjectHideFlags: 0

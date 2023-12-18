@@ -14,7 +14,6 @@ public class HaptGloveManager : MonoBehaviour
 
     private string bluetoothLog;
 
-
     void Start()
     {
         if (isQuest)
@@ -41,6 +40,8 @@ public class HaptGloveManager : MonoBehaviour
         //Add all layers that you want to interact with HaptGlove
         AddHaptGloveInteractableLayer("HaptGloveInteractable");
     }
+
+
 
     private void HaptGlove_OnConnected(HaptGloveHandler.HandType hand)
     {

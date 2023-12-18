@@ -22,7 +22,7 @@ public class PhysicsHandTracking : MonoBehaviour
     private string hand;
     private string hand_Short;
     private Transform[] targetJoints = new Transform[26];
-    private Transform targetRoot;
+    public Transform handRoot;
     private Transform[] followingJoints = new Transform[26];
 
     private Vector3 targePosition = new Vector3();
@@ -46,40 +46,45 @@ public class PhysicsHandTracking : MonoBehaviour
             hand_Short = "R";
         }
 
-        targetRoot = GameObject.Find(hand + " Hand Tracking").GetComponent<Transform>();
+        //handRoot = GameObject.Find(hand + " Hand Tracking").GetComponent<Transform>();
+        if (handRoot== null)
+        {
+            Debug.LogError("Hand root in " + gameObject.name + "is not assigned.");
+            return;
+        }
         rb = GetComponent<Rigidbody>();
 
-        targetJoints[0] = targetRoot.Find(hand_Short + "_Wrist/" + hand_Short + "_ThumbMetacarpal");
+        targetJoints[0] = handRoot.Find(hand_Short + "_Wrist/" + hand_Short + "_ThumbMetacarpal");
         targetJoints[1] = targetJoints[0].GetChild(0);
         targetJoints[2] = targetJoints[1].GetChild(0);
         targetJoints[3] = targetJoints[2].GetChild(0);
 
-        targetJoints[4] = targetRoot.Find(hand_Short + "_Wrist/" + hand_Short + "_IndexMetacarpal");
+        targetJoints[4] = handRoot.Find(hand_Short + "_Wrist/" + hand_Short + "_IndexMetacarpal");
         targetJoints[5] = targetJoints[4].GetChild(0);
         targetJoints[6] = targetJoints[5].GetChild(0);
         targetJoints[7] = targetJoints[6].GetChild(0);
         targetJoints[8] = targetJoints[7].GetChild(0);
 
-        targetJoints[9] = targetRoot.Find(hand_Short + "_Wrist/" + hand_Short + "_MiddleMetacarpal");
+        targetJoints[9] = handRoot.Find(hand_Short + "_Wrist/" + hand_Short + "_MiddleMetacarpal");
         targetJoints[10] = targetJoints[9].GetChild(0);
         targetJoints[11] = targetJoints[10].GetChild(0);
         targetJoints[12] = targetJoints[11].GetChild(0);
         targetJoints[13] = targetJoints[12].GetChild(0);
 
-        targetJoints[14] = targetRoot.Find(hand_Short + "_Wrist/" + hand_Short + "_RingMetacarpal");
+        targetJoints[14] = handRoot.Find(hand_Short + "_Wrist/" + hand_Short + "_RingMetacarpal");
         targetJoints[15] = targetJoints[14].GetChild(0);
         targetJoints[16] = targetJoints[15].GetChild(0);
         targetJoints[17] = targetJoints[16].GetChild(0);
         targetJoints[18] = targetJoints[17].GetChild(0);
 
-        targetJoints[19] = targetRoot.Find(hand_Short + "_Wrist/" + hand_Short + "_LittleMetacarpal");
+        targetJoints[19] = handRoot.Find(hand_Short + "_Wrist/" + hand_Short + "_LittleMetacarpal");
         targetJoints[20] = targetJoints[19].GetChild(0);
         targetJoints[21] = targetJoints[20].GetChild(0);
         targetJoints[22] = targetJoints[21].GetChild(0);
         targetJoints[23] = targetJoints[22].GetChild(0);
 
-        targetJoints[24] = targetRoot.Find(hand_Short + "_Wrist/" + hand_Short + "_Palm");
-        targetJoints[25] = targetRoot.Find(hand_Short + "_Wrist/");
+        targetJoints[24] = handRoot.Find(hand_Short + "_Wrist/" + hand_Short + "_Palm");
+        targetJoints[25] = handRoot.Find(hand_Short + "_Wrist/");
 
 
 
